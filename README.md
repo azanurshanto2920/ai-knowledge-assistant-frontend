@@ -1,16 +1,39 @@
-# React + Vite
+# AI Knowledge Assistant — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React frontend for an AI chatbot that answers questions from uploaded PDF documents (RAG), with user registration and login.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **App:** [https://ai-knowledge-assistant-frontend-tau.vercel.app](https://ai-knowledge-assistant-frontend-tau.vercel.app)
+- **Backend repository:** [ai-knowledge-assistant-backend](https://github.com/azanurshanto2920/ai-knowledge-assistant-backend)
+- **Backend API docs:** [https://ai-knowledge-assistant-backend-1yuu.onrender.com/docs](https://ai-knowledge-assistant-backend-1yuu.onrender.com/docs)
 
-## React Compiler
+> Note: The backend runs on a free tier and sleeps after inactivity. The first request (register or login) may take up to a minute. Uploaded PDFs are not stored permanently on the free tier.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- User registration and login (JWT token stored in the browser)
+- Upload a PDF and ask questions about its content
+- Chat interface with AI responses
+- Automatic logout when the session expires
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React (Vite)
+- Fetch API for communicating with the FastAPI backend
+- Deployed on Vercel
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Create a `.env` file in the project root:
+
+```
+VITE_API_URL=http://127.0.0.1:8000
+```
+
+To use the live backend instead, set `VITE_API_URL` to the Render backend URL.
